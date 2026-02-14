@@ -1,0 +1,88 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom, #e0f4ff, #b3e5fc);
+    color: #1b4965;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* ENVELOPE IMAGE */
+.envelope-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    position: relative;
+}
+
+.envelope-img {
+    width: 60vw;
+    max-width: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.envelope-img:hover,
+.envelope-img:active {
+    transform: scale(1.05);
+}
+
+/* BUTTONS */
+.main-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #4dabf7;
+    color: white;
+    font-size: 16px;
+    min-width: 120px;
+}
+
+/* HIDDEN CONTENT */
+.hidden { display: none; }
+
+/* GALLERY IMAGES */
+.photo-container img {
+    width: 95%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, opacity 0.8s ease;
+    opacity: 0; /* start hidden for fade-in */
+}
+
+.photo-visible { opacity: 1; }
+
+/* FLOATING HEARTS */
+.floating-hearts span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 5vw;
+    pointer-events: none;
+    opacity: 0.8;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    50% { transform: translateY(-60vh) rotate(15deg); opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(-15deg); opacity: 0; }
+}
+
+/* Responsive text */
+h1 { font-size: 7vw; margin: 20px 0 10px; }
+h2 { font-size: 6vw; margin: 15px 0; }
+p  { font-size: 4.5vw; margin: 8px 20px; }
